@@ -21,6 +21,7 @@ load("C:\\Users\\VAIO-VAIO\\Desktop\\NHIS_2007_RData.RData")
 #'txt file size is 0.99 MB
 #'csv file size is 1.50 MB
 #'RData file size is 48 KB
+# this variability probably is because of their different type. With different types we can have same data with a lower size.
 
 ### Q3
 summary(NHIS_2007_RData)
