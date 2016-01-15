@@ -30,6 +30,19 @@ nrow(NHIS_2007_RData)
 dim(NHIS_2007_RData)
 class(NHIS_2007_RData)
 typeof(NHIS_2007_RData)
+#'> ncol(NHIS_2007_RData)
+#[1] 9
+#> length(NHIS_2007_RData)
+#[1] 9
+#> nrow(NHIS_2007_RData)
+#[1] 4785
+#> dim(NHIS_2007_RData)
+#[1] 4785    9
+#> class(NHIS_2007_RData)
+#[1] "data.frame"
+#> typeof(NHIS_2007_RData)
+#[1] "list"
+
 
 ### Q4
 df<-read.dta("https://github.com/EconomiCurtis/econ294_2015/raw/master/data/org_example.dta")
@@ -75,11 +88,30 @@ s.3<-subset(diamonds,cut=="Ideal")
 mean(s.3$price)
 s.4<-subset(diamonds,cut!="fair")
 mean(s.4$price)
-s.5<-subset(diamonds,carat>2,cut=="Ideal"||cut=="very good")
-s.5
-summary(s.5)
+s.5<-subset(diamonds,carat>2|cut=="Ideal"|cut=="very good")
+mean(s.5$price)
 median(s.5$price)
 
-
-
-
+#'> mean(price)
+#[1] 557.1429
+#> s<-subset(diamonds,cut=="fair")
+#> mean(s$price)
+#[1] 673.3333
+#> s.1<-subset(diamonds,cut=="good")
+#> mean(s.1$price)
+#[1] 225
+#> s.2<-subset(diamonds,cut=="very good")
+#> mean(s.2$price)
+#[1] 450
+#> s.3<-subset(diamonds,cut=="Ideal")
+#> mean(s.3$price)
+#[1] 980
+#> s.4<-subset(diamonds,cut!="fair")
+#> mean(s.4$price)
+#3[1] 470
+#> s.5<-subset(diamonds,carat>2|cut=="Ideal"|cut=="very good")
+#> mean(s.5$price)
+#[1] 690
+#> median(s.5$price)
+#[1] 750
+#> 
